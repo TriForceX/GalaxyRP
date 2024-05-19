@@ -3747,6 +3747,18 @@ void ClientThink_real( gentity_t *ent ) {
 		pmove.checkDuelLoss = 0;
 	}
 
+	//GalaxyRP (Alex): [Combat] This is purely for switching saber styles. The delay between switching should be 190 ms.
+	if (pmove.cmd.generic_cmd &&
+		(pmove.cmd.generic_cmd != ent->client->lastGenCmd || ent->client->lastGenCmdTime - 110 < level.time))
+	{
+		switch (pmove.cmd.generic_cmd)
+		{
+			case GENCMD_SABERATTACKCYCLE:
+				Cmd_SaberAttackCycle_f(ent);
+				break;
+		}
+	}
+
 	if (pmove.cmd.generic_cmd &&
 		(pmove.cmd.generic_cmd != ent->client->lastGenCmd || ent->client->lastGenCmdTime < level.time))
 	{
@@ -4365,9 +4377,6 @@ void ClientThink_real( gentity_t *ent ) {
 					Jedi_Cloak( ent );
 				}
 			}
-			break;
-		case GENCMD_SABERATTACKCYCLE:
-			Cmd_SaberAttackCycle_f(ent);
 			break;
 		case GENCMD_TAUNT:
 			G_SetTauntAnim( ent, TAUNT_TAUNT );
