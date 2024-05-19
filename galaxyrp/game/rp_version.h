@@ -20,12 +20,13 @@ Project based on OpenJK and Zyk Mod. Work copyrighted (C) 2020 - 2022
 
 // Current version of the multi player game
 #define VERSION_MAJOR_RELEASE		3
-#define VERSION_MINOR_RELEASE		6
+#define VERSION_MINOR_RELEASE		7
+#define VERSION_BUGFIX_RELEASE		3
 #define VERSION_EXTERNAL_BUILD		0
 #define VERSION_INTERNAL_BUILD		0
 
 #define VERSION_STRING STR(VERSION_MAJOR_RELEASE) ", " STR(VERSION_MINOR_RELEASE) // "a, b"
-#define VERSION_STRING_DOTTED STR(VERSION_MAJOR_RELEASE) "." STR(VERSION_MINOR_RELEASE) // "a.b"
+#define VERSION_STRING_DOTTED STR(VERSION_MAJOR_RELEASE) "." STR(VERSION_MINOR_RELEASE) "." STR(VERSION_BUGFIX_RELEASE) // "a.b.c"
 
 // Set mod version definitions
 #define	JK_VERSION                  VER("GalaxyRP Mod v" VERSION_STRING_DOTTED)
